@@ -43,6 +43,7 @@ p.card-text {
 	font-style:normal;
 
 }
+/* Style for call to action */
  p#cta{
 	font-style: italic;
 	margin: 0;
@@ -521,7 +522,7 @@ footer {
 		padding: 2%;
 	}
 	#library{
-		padding:0
+		padding:0;
 	}
 	
 }
