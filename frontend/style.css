@@ -1,0 +1,490 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Nunito Sans, sans-serif;
+}
+/* Fallback colors if no theme */
+body {
+	background: #72717c;
+	color: #170f17;
+}
+
+/* Headings and text */
+h1,
+footer p {
+	font-family: Creepster, serif;
+}
+h2,
+h3,
+h4,
+h5,
+p {
+	font-family: Fondamento, serif;
+}
+
+h4 {
+	min-height: 2.2rem; /* Is able to contain 2 text-rows for long titles */
+}
+
+p.card-text {
+	margin: 0;
+	font-size: 14px;
+	font-family: Nunito Sans, sans-serif;
+}
+#Greeting p {
+	font-size: 0.6em;
+	max-width: 500px;
+}
+
+/* #userGreeting{
+	text-transform: capitalize;
+} */
+
+
+/* Buttons */
+/* Fallback colors (if no theme) */
+.btn {
+	border: none;
+	background: #000;
+	color: #e3e3e3;
+}
+.nav-item .btn,
+.userBooksModal div .btn {
+	width: 140px;
+}
+
+/* Header and nav */
+header {
+	padding: 1% 10%;
+	max-width: 100%;
+}
+.hidden {
+	display: none !important;
+}
+/* Hero image with greeting */
+.introHero {
+	background-image: url("../assets/images/Backgrounds/dark-img.png");
+	background-size: cover;
+	background-position: center;
+	padding: 4%;
+	text-shadow: 0px 0px 2px #000000d0; /* Svartaktig skugga */
+}
+
+/* Library wrapper */
+.wrap {
+	padding: 0% 4%;
+}
+
+/* Book card */
+.card {
+	min-width: 100%;
+	max-width: 100%;
+	border: none;
+}
+/* Images */
+.image-container {
+	position: relative;
+	width: 100%;
+	padding-bottom: 150%; /* 3:2 proportions (2/3 width, 3/3 height) */
+	border-radius: 5px;
+	background: #72717c; /* Fallback- color if no img */
+}
+
+.image-container img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.book-item img {
+	width: 100%;
+	height: auto; /* Keeps propotions */
+}
+/* Modals */
+/* close (X) btn for Modals */
+.btn-close {
+	opacity: 100%;
+}
+/* Auth (login & register) */
+/* Default hidden */
+#authContainer {
+	transition: all 1s ease-in-out;
+	background: #121112ec;
+	z-index: 1;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+/* Open */
+#authContainer.open {
+	opacity: 1;
+	z-index: 999;
+}
+
+/* Modal */
+.authModal {
+	background: #170f17;
+	border: solid 1px #241c24;
+	color: white;
+	height: 80%;
+	max-height: 630px;
+	min-width: 40%;
+	border-radius: 2px;
+}
+
+.authModal h2 {
+	color: #e3e3d8;
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+.authModal .btn {
+	width: 100px;
+}
+/* login & register */
+.login,
+.register {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.login label,
+.register label {
+	width: 140px; /* Adjust width as needed */
+	display: block; /* Ensures fixed width */
+	color: #e3e3d8;
+}
+/* Separation */
+.register {
+	padding-top: 20px;
+	border-top: 1px #241c24 solid;
+}
+.login {
+	margin-bottom: 20px;
+}
+/* wide btns */
+.login .btn,
+.register .btn {
+	width: 160px;
+}
+/* Inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+	margin: 2px 0px 20px 0px;
+	padding: 2px;
+	border: none;
+	border-radius: 3px;
+	width: 300px;
+	background: #c1c1c1;
+}
+
+/* Spookshelf Modal */
+/* Starts as hidden */
+#spookShelfContainer {
+	background: #121112ec;
+	z-index: -1;
+	transition: all 1s ease-in-out;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+/* Modal open */
+#spookShelfContainer.open {
+	opacity: 1;
+	z-index: 999;
+}
+
+/* Modal */
+.savedBooksModal {
+	background: #170f17;
+	border: solid 1px #241c24;
+	color: #e3e3d8;
+	overflow: auto;
+	margin: 10% 0%;
+	min-width: 40%;
+	max-height: 80%;
+	border-radius: 2px;
+}
+
+
+/* Styling to give each div a "old book spine look"*/
+.book-spine {
+	box-shadow: 15px 5px 10px rgba(0, 0, 0, 0.467);
+	padding: 2%;
+	margin: 10px;
+	list-style: none;
+	color: #b08a3e;
+}
+
+/* Gives books differing colors */
+/* OBS not connected to book id, just order in list */
+/* When one books is deleted, all switch color again */
+
+/* Parent is first in list */
+.saved-book-card:nth-child(3n + 1) .book-spine {
+	background: #351007; /* Färg 2 */
+}
+/* Parent is second in list */
+.saved-book-card:nth-child(3n + 2) .book-spine {
+	background: #0a2e2e; /* Färg 3 */
+}
+/* Parent is third in list */
+.saved-book-card:nth-child(3n) .book-spine {
+	background: #2c0a18; /* Färg 1 */
+}
+/* Golden book decoration */
+.book-deco {
+	border: 5px double #785226;
+	padding: 5px;
+}
+/* Delete btn */
+.saved-book-card button.deleteBtn {
+	background: #5a0000;
+	color: #e3e3d8;
+	width: 100px;
+}
+.saved-book-card button.deleteBtn:hover {
+	background: #a40000;
+}
+
+/* Indicates active sort btn */
+.active {
+	border: 1px #e3e3d8 solid !important;
+	font-weight: bold;
+	filter: grayscale(10%) brightness(110%); /* Slightly lighter color for active */
+}
+
+/* Themes */
+/* Old theme (spooky vibes)*/
+body.old {
+	background: #001f25;
+	color: #c57504;
+}
+
+/* Logo */
+body.old .logo,
+body.old h1 {
+	color: #bbbaae;
+	text-shadow: 0px 0px 2px #a5ff8f; /* spooky glow*/
+}
+
+body.old .introHero {
+	color: #c57504;
+}
+body.old h4 {
+	color: #000000;
+}
+/* book card */
+body.old div.card {
+	background: #3c5357; /* Mörk lila för korten */
+	color: #e3e3d8; /* Mörk text vid hover för kontrast */
+}
+
+/* Buttons */
+body.old .btn {
+	background: #b1baa7; 
+	color: #212121;
+}
+body.old .btn:hover {
+	background: #d9d8ca; 
+}
+
+/* Dark theme */
+body.dark {
+	background: #0d1127;
+	color: #e1f3f3;
+}
+/* Logo */
+body.dark h1,
+body.dark .logo {
+	color: #e1f3f3;
+	text-shadow: 0px 2px 4px #00ffa6; /* green glow */
+}
+
+body.dark .introHero,
+body.dark h4 {
+	color: #69e9ab;
+}
+body.dark div.card {
+	background: #2c3052;
+	color: #e1f3f3;
+}
+
+/* Buttons */
+body.dark .btn {
+	background: #0f9c76;
+	color: #e1f3f3;
+}
+body.dark .btn:hover {
+	background: #01c298;
+}
+
+/* Light theme */
+body.light {
+	background: #e3e3e3;
+	color: #000000;
+}
+
+body.light header {
+	background: #c8c8c8;
+	color: #000000;
+}
+/* logo diffrent color from h1 */
+body.light .logo {
+	color: #bd0010;
+}
+/* Lighter image*/
+body.light .introHero {
+	background-image: url("../assets/images/Backgrounds/light-img.png");
+	color: #bd0010;
+	text-shadow: 0px 1px 2px #000000; /* visability */
+}
+
+body.light div.card {
+	background-color: #c8c8c8; /* Anpassad bakgrund för card i green mode */
+}
+
+/* Buttons */
+body.light .btn {
+	background: #780c00;
+	color: #e3e3e3;
+}
+body.light .btn:hover {
+	background: #c30212;
+}
+
+/* Colorful Theme */
+body.colorful {
+	background: #232044;
+	color: #fff4d3;
+}
+
+/* Logo */
+body.colorful .logo,
+body.colorful h1 {
+	color: #fdb530;
+	text-shadow: 0px 0px 5px #000000; /* makes logo stand out */
+}
+
+body.colorful div.card {
+	background: #4e458b;
+	color: #fff4d3;
+}
+
+body.colorful .introHero h2,
+body.colorful div.card h4 {
+	color: #fdb530;
+}
+
+/* Buttons */
+body.colorful .btn {
+	background: #fda430;
+	color: #19191a;
+}
+body.colorful .btn:hover {
+	background: #ffbc48;
+}
+
+/* Muted theme */
+body.muted {
+	background: #291921; /* Mörkgrå bakgrund för en mer spöklik känsla */
+	color: #dbdace; /* Off-white textfärg för en spöklik känsla */
+}
+
+body.muted header {
+	background: #09232d; /* Mörkgrå header för dämpad look */
+}
+
+/* Röd text på h1 och h2 för att ge en dramatisk effekt */
+body.muted h1 {
+	color: #7e000f; /* Mörkröd färg för rubrikerna */
+	text-shadow: 0px 0px 2px #f84049; /* Svartaktig skugga */
+}
+/* Logotyp */
+
+body.muted .introHero {
+	color: #ad0014;
+}
+body.muted h4 {
+	color: #e0d76b;
+}
+/* Kort */
+body.muted div.card {
+	background: #213643; /* Mörk lila för korten */
+	color: #f6f6ec; /* Ljus off-white text på korten */
+}
+
+/* Knappar */
+body.muted .btn {
+	background: #6c7509; /* Lila bakgrund på knappar för mystisk känsla */
+	color: #e3e3d8; /* Ljus text på knapparna */
+}
+
+body.muted .btn:hover {
+	background: #5c600b; /* Ljusare lila vid hover */
+	color: #e3e3d8; /* Mörk text vid hover för kontrast */
+}
+
+
+/* Footer */
+/* Creepy footer text */
+footer {
+	font-size: 1.8em;
+	text-align: center;
+	color: #7d0000da;
+}
+
+/* CSS for small screens */
+@media (max-width: 576px) {
+	/* Header */
+	header {
+		flex-direction: column; /* Columns insted of rows */
+		align-items: center;
+		text-align: center;
+		padding-bottom: 1em;
+	}
+
+	header h1 {
+		font-size: 2.4em;
+		width: 100%; /* full widht*/
+		margin: 10px 0;
+	}
+
+	/* Navigation menu */
+	.nav {
+		width: 100%; /* full width */
+		display: flex;
+		flex-direction: row; /* each nav in own row*/
+		align-items: center;
+	}
+
+	.nav-item {
+		width: 100%; /* Full width */
+		margin: 5px 0;
+	}
+
+	.nav-item .btn {
+		width: 220px; /* wider */
+		margin: 0.2em;
+	}
+	/* Modals */
+	/* Full width and height */
+	.savedBooksModal,
+	.authModal {
+		min-width: 100%;
+		min-height: 100%;
+	}
+}
