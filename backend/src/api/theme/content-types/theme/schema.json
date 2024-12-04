@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "themes",
+  "info": {
+    "singularName": "theme",
+    "pluralName": "themes",
+    "displayName": "theme",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "old",
+        "dark",
+        "light",
+        "colorful",
+        "muted"
+      ],
+      "default": "old",
+      "required": false
+    }
+  }
+}
