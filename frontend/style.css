@@ -17,14 +17,19 @@ footer p {
 }
 h2,
 h3,
-h4,
-h5,
-p {
+h5
+{
 	font-family: Fondamento, serif;
 }
+h4,
+p {
+	font-family: Noto Serif, serif;
+}
 
-h4 {
-	min-height: 2.2rem; /* Is able to contain 2 text-rows for long titles */
+.card-body h4 {
+	font-size: 1em;
+	min-height: 1.8em; /* Is able to contain 2 text-rows for long titles */
+	font-style: italic;
 }
 
 p.card-text {
@@ -34,12 +39,19 @@ p.card-text {
 }
 #Greeting p {
 	font-size: 0.6em;
-	max-width: 500px;
+	max-width: 400px;
+	font-style:normal;
+
+}
+ p#cta{
+	font-style: italic;
+	margin: 0;
+
 }
 
-/* #userGreeting{
-	text-transform: capitalize;
-} */
+#userGreeting{
+	font-size: 1.1em;
+} 
 
 
 /* Buttons */
@@ -50,13 +62,18 @@ p.card-text {
 	color: #e3e3e3;
 }
 .nav-item .btn,
-.userBooksModal div .btn {
+.savedBooksModal div .btn {
 	width: 140px;
 }
 
+/* .saveToShelfBtn{
+
+} */
+
+
 /* Header and nav */
 header {
-	padding: 1% 10%;
+	padding: 1% 10% 0% 10%;
 	max-width: 100%;
 }
 .hidden {
@@ -67,13 +84,19 @@ header {
 	background-image: url("../assets/images/Backgrounds/dark-img.png");
 	background-size: cover;
 	background-position: center;
-	padding: 4%;
+	padding: 2%;
 	text-shadow: 0px 0px 2px #000000d0; /* Svartaktig skugga */
 }
 
 /* Library wrapper */
 .wrap {
 	padding: 0% 4%;
+
+}
+#library{
+	padding:10px;
+	gap: 0;
+
 }
 
 /* Book card */
@@ -81,12 +104,24 @@ header {
 	min-width: 100%;
 	max-width: 100%;
 	border: none;
+	margin-bottom: 20px;
+	padding: 0%;
 }
+
+
+/* Card body container */
+ .card-body {
+padding: 10%;
+}
+
+
 /* Images */
 .image-container {
 	position: relative;
 	width: 100%;
-	padding-bottom: 150%; /* 3:2 proportions (2/3 width, 3/3 height) */
+	aspect-ratio: 2 / 3; /* 3:2 förhållande */
+	/* padding-bottom: 150%;  */
+	/* 3:2 proportions (2/3 width, 3/3 height) */
 	border-radius: 5px;
 	background: #72717c; /* Fallback- color if no img */
 }
@@ -99,10 +134,6 @@ header {
 	height: 100%;
 }
 
-.book-item img {
-	width: 100%;
-	height: auto; /* Keeps propotions */
-}
 /* Modals */
 /* close (X) btn for Modals */
 .btn-close {
@@ -134,7 +165,7 @@ header {
 	color: white;
 	height: 80%;
 	max-height: 630px;
-	min-width: 40%;
+	min-width: 30%;
 	border-radius: 2px;
 }
 
@@ -214,7 +245,7 @@ input[type="email"] {
 	color: #e3e3d8;
 	overflow: auto;
 	margin: 10% 0%;
-	min-width: 40%;
+	max-width: 30%;
 	max-height: 80%;
 	border-radius: 2px;
 }
@@ -250,15 +281,6 @@ input[type="email"] {
 	border: 5px double #785226;
 	padding: 5px;
 }
-/* Delete btn */
-.saved-book-card button.deleteBtn {
-	background: #5a0000;
-	color: #e3e3d8;
-	width: 100px;
-}
-.saved-book-card button.deleteBtn:hover {
-	background: #a40000;
-}
 
 /* Indicates active sort btn */
 .active {
@@ -271,7 +293,7 @@ input[type="email"] {
 /* Old theme (spooky vibes)*/
 body.old {
 	background: #001f25;
-	color: #c57504;
+	color: #e3e3d8;
 }
 
 /* Logo */
@@ -284,19 +306,17 @@ body.old h1 {
 body.old .introHero {
 	color: #c57504;
 }
-body.old h4 {
-	color: #000000;
-}
+
 /* book card */
 body.old div.card {
-	background: #3c5357; /* Mörk lila för korten */
-	color: #e3e3d8; /* Mörk text vid hover för kontrast */
+	background: #3c5357;
+	color: #e3e3d8;
 }
 
 /* Buttons */
 body.old .btn {
 	background: #b1baa7; 
-	color: #212121;
+	color: #131313;
 }
 body.old .btn:hover {
 	background: #d9d8ca; 
@@ -438,6 +458,16 @@ body.muted .btn:hover {
 	color: #e3e3d8; /* Mörk text vid hover för kontrast */
 }
 
+/* Delete btn */ 
+
+.saved-book-card button.deleteBtn {
+	background: #5a0000;
+	color: #e3e3d8;
+	width: 80px;
+}
+.saved-book-card button.deleteBtn:hover {
+	background: #a40000;
+}
 
 /* Footer */
 /* Creepy footer text */
@@ -487,4 +517,11 @@ footer {
 		min-width: 100%;
 		min-height: 100%;
 	}
+	card-body {
+		padding: 2%;
+	}
+	#library{
+		padding:0
+	}
+	
 }

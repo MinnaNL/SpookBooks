@@ -169,7 +169,7 @@ async function renderPage() {
 		// Capitalize username
 		username = capitalizeUsername(username);
 
-		Greeting.innerHTML = `The spirits welcome you, ${username} `;
+		Greeting.innerHTML = `The spirits welcome you, ${username}! `;
 		auth.classList.add("hidden");
 		spookShelfBtn.classList.remove("hidden");
 		logoutBtn.classList.remove("hidden");
@@ -228,7 +228,7 @@ function displayBooks(book) {
 
 	// Skapa innehållet för boken
 	bookCard.innerHTML = `
-    <div class="card p-1">
+    <div class="card">
       <div class="card-body d-flex flex-column">
         <div class="image-container mb-2">
           <img src="${
@@ -239,10 +239,10 @@ function displayBooks(book) {
                alt="${title} Cover" 
                class="img-fluid">
         </div>
-        <h4 class="card-title h5">${title}</h4>
+        <h4 class="card-title">${title}</h4>
         <p class="card-text">Author: ${author}</p>
-        <p class="card-text fw-light">Pages: ${pages}</p>
-        <p class="card-text fw-light mb-2">Published: ${published}</p>
+        <p class="card-text fw-light ">Pages: ${pages}</p>
+        <p class="card-text  fw-light mb-2">Published: ${published}</p>
       </div>
     </div>
   `;
@@ -257,7 +257,7 @@ function displayBooks(book) {
 			"btn",
 			"btn-sm",
 			"w-100",
-			"p-2",
+			"py-2",
 			"text-center",
 			"saveToShelfBtn"
 		);
@@ -375,10 +375,11 @@ function displaySavedBooks(books) {
 			"row",
 			"justify-content-between",
 			"align-items-center",
-			"mw-100"
+			"mw-100",
+			"p-2"
 		);
 		savedBookCard.innerHTML = `
-    <div class="book-spine d-flex w-100 ">
+    <div class="book-spine d-flex">
       <div class="book-deco d-flex col">
         <div class="d-flex row w-75">
           <h5 class="h5 card-title">${title}</h5>
@@ -393,7 +394,7 @@ function displaySavedBooks(books) {
       </div>
     </div>
     <div class="d-flex justify-content-end mb-3">
-      <button class="btn btn-sm p-2 deleteBtn" data-book-id="${id}">Delete</button>
+      <button class="btn btn-sm py-2 deleteBtn" data-book-id="${id}">Delete</button>
     </div>
           `;
 

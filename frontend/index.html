@@ -1,5 +1,5 @@
 <!-- SpookBooks by Minna Nordlund -->
- <!-- Using Strapi -->
+<!-- Using Strapi -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -11,10 +11,7 @@
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Amarante&family=Bokor&family=Creepster&family=Fondamento:ital@0;1&family=IM+Fell+French+Canon+SC&family=Metal+Mania&family=Nosifer&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Pirata+One&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=UnifrakturMaguntia&display=swap"
-			rel="stylesheet"
-		/>
+		<link href="https://fonts.googleapis.com/css2?family=Amarante&family=Bokor&family=Creepster&family=Fondamento:ital@0;1&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Pirata+One&display=swap" rel="stylesheet">
 		<!-- Bootstrap -->
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -71,38 +68,6 @@
 		</header>
 		<!-- Main -->
 		<main>
-			<!-- Hero image (Intro)-->
-			<div
-				class="introHero d-flex justify-content-center align-items-center text-center w-100"
-			>
-				<!-- Default Greeting text -->
-				<div
-					id="Greeting"
-					class="fs-4 mx-auto justify-content-center align-items-center"
-				>
-					<!-- Logged in user greeting -->
-					<h2 id="userGreeting" class="h3"></h2>
-					<p>
-						Step into the shadowy shelves of SpookBooks — A haunted library
-						filled with chilling tales of dark mystery. Will you dare to enter
-						and uncover the sinister secrets within?
-					</p>
-					<p>Collect your favorite haunted books on your personal SpookShelf</p>
-				</div>
-			</div>
-			<!-- Library -->
-			<div class="wrap mx-auto container">
-				<div id="libraryContainer" class="d-flex flex-wrap">
-					<h3 class="pt-3 ps-3 h3 text-center">Library</h3>
-					<!-- List of books in library -->
-					<ul
-						id="library"
-						class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center p-2"
-					>
-						<!-- Dynamically displays books with strapi and JS -->
-					</ul>
-				</div>
-			</div>
 			<!-- Auth - login and registration -->
 			<div
 				id="authContainer"
@@ -165,6 +130,38 @@
 					</div>
 				</div>
 			</div>
+			<!-- Hero image (Intro)-->
+			<div
+				class="introHero d-flex justify-content-center align-items-center text-center w-100"
+			>
+				<!-- Default Greeting text -->
+				<div
+					id="Greeting"
+					class="fs-4 mx-auto justify-content-center align-items-center"
+				>
+					<!-- Logged in user greeting -->
+					<h2 id="userGreeting"></h2>
+					<p>
+						Welcome to SpookBooks - The Cursed Library
+						<p>Do you dare to enter the shadowy shelves
+						filled with chilling tales of dark mystery and sinister secrets...?</p>
+					<p id="cta">Collect your favorite books on your SpookShelf!</p>
+				</div>
+			</div>
+			<!-- Library -->
+			<div class="wrap mx-auto container">
+				<div id="libraryContainer" class="d-flex flex-wrap">
+					<h3 class="mt-3 ps-3 h4">Library</h3>
+					<!-- List of books in library -->
+					<ul
+						id="library"
+						class="row row-cols-2 row-cols-md-3 row-cols-lg-5 justify-content-center"
+					>
+						<!-- Dynamically displays books with strapi and JS -->
+					</ul>
+				</div>
+			</div>
+
 			<!-- SpookShelf -saved books -->
 			<div
 				id="spookShelfContainer"
@@ -179,26 +176,26 @@
 						aria-label="Close"
 					></button>
 					<h3 class="text-center">SpookShelf</h3>
-          <!-- Sort Buttons -->
+					<!-- Sort Buttons -->
 					<div class="p-2 d-flex justify-content-center gap-2">
-            <!-- by Title -->
+						<!-- by Title -->
 						<button id="sortByTitle" class="btn sort-button">
 							Sort by title
 						</button>
-            <!-- by Auther -->
+						<!-- by Auther -->
 						<button id="sortByAuthor" class="btn sort-button">
 							Sort by author
 						</button>
 					</div>
-          <!-- Spookshelf books ( saved books list) -->
-					<ul id="spookShelf" class="list-group d-flex p-3 d-flex"></ul>
-          <!-- Will render dynamically with JS -->
+					<!-- Spookshelf books ( saved books list) -->
+					<ul id="spookShelf" class="list-group d-flex d-flex"></ul>
+					<!-- Will render dynamically with JS -->
 				</div>
 			</div>
 		</main>
-    <!-- Footer -->
+		<!-- Footer -->
 		<footer>
-      <!-- Creepy msg -->
+			<!-- Creepy msg -->
 			<p class="p-2">
 				You're not alone… someone is watching from the shadows...
 			</p>
