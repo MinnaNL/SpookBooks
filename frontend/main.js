@@ -222,9 +222,13 @@ function displayBooks(book) {
 	const libraryElement = document.getElementById("library");
 	const { title, author, pages, published, cover, id } = book;
 
+		// Extract year from published date
+		const year = published.split("-")[0];
+
+
 	// Skapa bokens kolumn
 	const bookCard = document.createElement("div");
-	bookCard.classList.add("col", "d-flex", "justify-content-center", "mb-3");
+	bookCard.classList.add("bookCard","col", "d-flex", "justify-content-center", "mb-3");
 
 	// Skapa innehållet för boken
 	bookCard.innerHTML = `
@@ -240,9 +244,9 @@ function displayBooks(book) {
                class="img-fluid">
         </div>
         <h4 class="card-title">${title}</h4>
-        <p class="card-text">Author: ${author}</p>
+        <p class="card-text fw-bold">${author}</p>
         <p class="card-text fw-light ">Pages: ${pages}</p>
-        <p class="card-text  fw-light mb-2">Published: ${published}</p>
+		<p class="card-text fw-light mb-2">Published: ${year}</p>
       </div>
     </div>
   `;
@@ -264,7 +268,7 @@ function displayBooks(book) {
 		saveToShelfButton.setAttribute("data-book-id", id);
 
 		// icon + text btn
-		saveToShelfButton.innerHTML = `<i class="fa-solid fa-bookmark"></i> Save to SpookShelf`;
+		saveToShelfButton.innerHTML = `<i class="fa-solid fa-bookmark"></i> Save`;
 
 		buttonWrapper.appendChild(saveToShelfButton);
 		bookCard.querySelector(".card-body").appendChild(buttonWrapper);
